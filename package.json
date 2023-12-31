@@ -1,0 +1,46 @@
+{
+  "name": "mcws",
+  "version": "1.0.0",
+  "description": "Minecraft Bedrock or Education Edition WebSocket Server",
+  "main": "lib/index.cjs",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "analyze": "esbuild --analyze=verbose .",
+    "dev": "node esbuild.development.cjs",
+    "build": "node esbuild.production.cjs && tsc --emitDeclarationOnly --outDir lib --resolveJsonModule && cp lib/src/* -r lib && rm -rf lib/src",
+    "type": "tsc --emitDeclarationOnly --outDir lib --resolveJsonModule && cp lib/src/* -r lib && rm -rf lib/src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blocks-team/mcws.git"
+  },
+  "keywords": [
+    "Minecraft",
+    "WebSocket",
+    "Server",
+    "mcws"
+  ],
+  "author": "lihugang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blocks-team/mcws/issues"
+  },
+  "homepage": "https://github.com/blocks-team/mcws#readme",
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "@types/uuid": "^9.0.7",
+    "@types/ws": "^8.5.10",
+    "esbuild": "^0.19.11",
+    "esbuild-node-externals": "^1.12.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "uuid": "^9.0.1",
+    "ws": "^8.16.0"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.8"
+  }
+}
